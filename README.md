@@ -61,11 +61,11 @@ Para ver la aplicación:
 
 En el navegador cargar la siguiente url:
 
-http://<localhost o el ip del anfitrion>/index.php
+http://localhost o el ip del anfitrion/index.php
 
 Para ingresar a la interfaz PhpMyAdmin:
 
-http:// <localhost o el ip del anfitrion>:8081/
+http://localhost o el ip del anfitrion:8081/
 
 Para realizar un backup de la base de datos prueba:
 
