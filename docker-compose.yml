@@ -1,0 +1,49 @@
+version: '3.3'
+services:
+  php:
+    # image: yiisoftware/yii2-php:7.4-apache
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+
+    volumes:
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      - ./:/app:delegated
+    ports:
+      - '80:80'
+    networks:
+     - my-red
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_DATABASE= yiidemodb
+      - MYSQL_USER= userdb
+      - MYSQL_PASSWORD= usedb1234
+      - MYSQL_ROOT_PASSWORD=pepe
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - my-dbdemo:/var/lib/mysql
+    networks:
+     - my-red
+ # phpmyadmin
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8081:80'
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: pepe 
+    networks:
+      - my-red     
+volumes:
+  my-dbdemo:
+networks:
+  my-red:
+    driver: bridge
