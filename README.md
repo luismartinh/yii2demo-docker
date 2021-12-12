@@ -16,15 +16,15 @@ De esta manera, permitiría en el ciclo de desarrollo la ejecución de la app de
 Solo es para modo de desarrollo no esta pensado para en entorno de producción!
 
 
-Consta de 3 contenedores:
+<h3>Consta de 3 contenedores:</h3>
 
-yii2demo_php  
+<b>yii2demo_php</b>  
 
 Contenedor del framework yii , que genera la imagen necesaria para el entorno también  declara los volúmenes para la persistencia del código.
 Expone el puerto 80.
 Se enlaza con la red my-red.
 
-yii2demo_db_1
+<b>yii2demo_db_1</b>
 
 Contenedor de la base de datos tipo MySQL gestiona las bases de datos a utilizar por la aplicación:
 
@@ -32,26 +32,26 @@ Expone el puerto 3306
 Crea y setea las variables de entorno necesarias para su uso
 Se enlaza con la red my-red.
 
-yii2demo_phpmyadmin_1
+<b>yii2demo_phpmyadmin_1</b>
 Contenedor de la app. PhpMyAdmin interfaz del usuario para gestionar las base  de datos del contendor anterior
 Expone el puerto 8081
 Se enlaza con la red my-red.
 
 
-Volúmenes declarados  
+<b>Volúmenes declarados:</b>  
 my-dbdemo:
 
-Red:
+<b>Red:</b>
 	my-red de tipo bridge:
 
 
-Instrucciones:
+<h3>Instrucciones:</h3>
 
 Descargar el contenido en un directorio padre:
 
 Luego Ejecutar:
 
- Docker-compose up –d
+ docker-compose up –d
 
 Para generar la base de datos prueba 
 
