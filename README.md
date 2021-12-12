@@ -51,6 +51,14 @@ Descargar el contenido en un directorio padre:
 
 Luego Ejecutar:
 
+(dentro del directorio donde esta composer.json)
+
+composer update
+
+(orquestador de paquetes de la app)
+
+Luego 
+
  docker-compose up –d
 
 Para generar la base de datos prueba 
